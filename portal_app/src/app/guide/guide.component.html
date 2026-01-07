@@ -1,0 +1,318 @@
+
+<div class="bg-amber-50  py-16">
+    <div class="py-7">
+        <div class="text-center text-3xl font-bold">API Portal User Guide</div>
+        <p class="text-center mt-2 text-gray-600">Discover how to get the most out of this platform.</p>
+        <div class="w-24 h-1 bg-orange-500 mx-auto mt-4 rounded"></div>
+    </div>
+    <div class ="max-w-7xl mx-auto px-4">
+        <div class="flex bg-white rounded-xl shadow-lg overflow-hidden ">
+            <!-- SIDEBAR -->
+            <aside class="w-64 bg-white border-r overflow-y-auto">
+                <ul class="text-sm space-y-1">
+                    <li>
+                        <a (click)="goToSection('introduction')"
+                        class="sidebar-link block px-4 py-3 font-semibold text-black"
+                        [class.active]="activeSection === 'introduction'">
+                            Introduction
+                        </a>
+                    </li>
+                    <li>
+                        <a (click)="goToSection('searching')"
+                        class="sidebar-link block px-4 py-3 font-semibold text-black"
+                        [class.active]="activeSection === 'searching'">
+                            Searching for Documentation
+                        </a>
+                    </li>
+                    <li>
+                        <a (click)="goToSection('perfoms-search')"
+                        class="sidebar-link block px-4 py-3 font-semibold text-black"
+                        [class.active]="activeSection === 'perfoms-search'">
+                            How to perform an effective search
+                        </a>
+                     
+                    </li>
+                    <li>
+                        <a (click)="goToSection('navigating-card')"
+                        class="sidebar-link block px-4 py-3 font-semibold text-black"
+                        [class.active]="activeSection === 'navigating-card'">
+                            Navigating a Documentation Card
+                        </a>
+                        
+                    </li>
+                    <li>
+                        <a (click)="goToSection('exploring-swagger')"
+                        class="sidebar-link block px-4 py-3 font-semibold text-black"
+                        [class.active]="activeSection === 'exploring-swagger'">
+                            Exploring Interactive Swagger Documentation
+                        </a>
+                        
+                    </li>
+                    <li>
+                        <a (click)="goToSection('suggesting-docs')"
+                        class="sidebar-link block px-4 py-3 font-semibold text-black"
+                        [class.active]="activeSection === 'suggesting-docs'">
+                            Suggesting New or Improved Documentation
+                        </a>
+                        
+                    </li>
+                    <li>
+                        <a  (click)="goToSection('best-practices')"
+                        class="sidebar-link block px-4 py-3 font-semibold text-black"
+                        [class.active]="activeSection === 'best-practices'">
+                            Best Practices for Optimal Use
+                        </a>
+                    </li>
+                    <li>
+                        <a  (click)="goToSection('support')"
+                        class="sidebar-link block px-4 py-3 font-semibold text-black"
+                        [class.active]="activeSection === 'support'">
+                           Support
+                        </a>
+                    </li>
+                </ul>
+
+            </aside>
+            
+                <div class="w-0.5 bg-gray-200"></div>
+              <!-- MAIN CONTENT -->
+            <main  [ngSwitch]="activeSection" class="flex-1 p-8 overflow-y-auto scroll-smooth">
+                
+
+                <section *ngSwitchCase="'introduction'" >
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        Welcome to our internal API documentation platform, designed specifically for internal clients and teams. This centralized hub enables you to easily discover, explore, understand, and contribute to the documentation of all APIs developed and maintained within the organization. <br>
+                        Each API is represented by a dedicated, user-friendly documentation card that provides: <br></p>
+                    <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                        <li>A complete, non-technical description of the API’s purpose, key features, business value, and typical use cases — making it accessible to stakeholders.</li>
+                        <li>Practical information such as prerequisites, authentication methods, rate limits, and common integration patterns.</li>
+                        <li>Direct access to the interactive Swagger (OpenAPI) specification for in-depth technical exploration and testing.</li>
+                    </ul>
+                    <br>
+                    <p  class="text-gray-700 mb-6 leading-relaxed">  This comprehensive guide walks you through every aspect of the platform: searching for APIs, navigating documentation cards, leveraging Swagger’s interactive features, contributing new documentation, and following best practices to maximize productivity and collaboration.</p>
+                </section>
+                <section *ngSwitchCase="'searching'">
+                    <h3 class="text-xl font-semibold mb-3">
+                        Searching for Documentation
+                    </h3>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        Efficient discovery is at the heart of the platform. The global search functionality is always available and can be accessed in multiple ways:
+                    </p>
+                    <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                        <li>
+                            Click the search bar located in the top header on any page.
+                        </li>
+                        <li>
+                            Use keyboard shortcut
+                            <span class="font-medium text-orange-600">Ctrl + K</span>
+                            (Windows/Linux) or
+                            <span class="font-medium text-orange-600">⌘ + K</span> 
+                            (Mac) to instantly focus the search field.
+                        </li>
+                        <li>
+                            Combine keywords and tags for precise results.
+                        </li>
+                    </ul>
+                </section>
+                <br>
+                <section *ngSwitchCase="'perfoms-search'">
+                    <h3 class="text-xl font-semibold mb-3">
+                        How to perform an effective search:
+                    </h3>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        Efficient discovery is at the heart of the platform. The global search functionality is always available and can be accessed in multiple ways:
+                    </p>
+                    <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                        <li>
+                            Keyword search: Type relevant terms (e.g., “invoice”, “user profile”, “payment gateway”). The search engine indexes API titles, descriptions, tags, and content to return the most relevant results.
+                        </li>
+                        <li>
+                            Tag filtering: Narrow results by selecting or typing tags such as “finance”, “authentication”, “e-commerce”, “reporting”, or team-specific tags like “backend-team-alpha”.
+                        </li>
+                        <li>
+                            Combined searches: Mix keywords and tags for precision (e.g., “order” + tag “logistics”).
+                        </li>
+                        <li>
+                            Instant results: As you type, a dropdown list appears with matching API cards. Click any result to navigate directly to its full documentation page.
+                        </li>
+                        <p class="text-gray-700 mb-6 leading-relaxed">This powerful yet simple search ensures that anyone — from developers to product managers — can quickly locate the right API without prior knowledge of its exact name or location.</p>
+                    </ul>
+                </section>
+                <br>
+                <section *ngSwitchCase="'navigating-card'">
+                    <h3 class="text-xl font-semibold mb-3">
+                        Navigating a Documentation Card
+                    </h3>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                       Once you’ve selected an API, you’ll land on its dedicated documentation page, thoughtfully structured for clarity and ease of use:
+                    </p>
+                    <p class="font-semibold">Left Sidebar – Table of Contents & Tags</p>
+                    <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                        <li>
+                            Table of Contents: A collapsible, clickable outline of all sections (e.g., Overview, Use Cases, Authentication, Endpoints Summary, Prerequisites, Error Handling, Changelog). Jump instantly to the section you need.
+                        </li>
+                        <li>
+                           Tags Section: Displayed below the table of contents, showing all associated tags. Clicking a tag performs a new search for other APIs sharing the same tag, enabling easy discovery of related services.
+                        </li>
+                    </ul>
+                    <br>
+                    <p class="font-semibold">Central Area – Main Content</p>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                       The core documentation is presented in clear, well-organized sections, typically including:
+                    </p>
+                    <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                        <li>
+                            Overview: A business-oriented, jargon-free explanation of what the API does, why it exists, and the value it delivers.
+                        </li>
+                        <li>
+                           Key Features & Benefits: Highlights of functionality and advantages for consumers.
+                        </li>
+                        <li>
+                           Use Cases & Examples: Real-world scenarios with sample workflows or code snippets (in multiple languages when available).
+                        </li>
+                        <li>
+                           Prerequisites: Required permissions, subscriptions, or setup steps.
+                        </li>
+                        <li>
+                           Authentication: Detailed guidance on API keys, OAuth 2.0, JWT, or other methods.
+                        </li>
+                        <li>
+                           Rate Limits & Quotas: Current policies and best practices for handling them.
+                        </li>
+                        <li>
+                          Error Codes: Common errors and troubleshooting tips.
+                        </li>
+                        <li>
+                          Versioning & Changelog: History of changes and deprecation notices.
+                        </li>
+                    </ul>
+                     <br>
+                    <p class="font-semibold">Swagger Access</p>
+                   
+                    <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                        <li>
+                            A prominent “Open Swagger UI” or “Try Interactive Docs” button appears near the top of the page (if the API provides a Swagger/OpenAPI definition).
+                        </li>
+                        <li>
+                           Clicking it opens the fully interactive Swagger interface either embedded or in a new tab, allowing immediate technical exploration.
+                        </li>
+                    </ul>
+                     <p class="text-gray-700 mb-6 leading-relaxed">
+                       This consistent layout provides a seamless experience whether you need high-level understanding or deep technical details.
+                    </p>
+                </section>
+                <br>
+                <section *ngSwitchCase="'exploring-swagger'">
+                    <h3 class="text-xl font-semibold mb-3">
+                        Exploring Interactive Swagger Documentation
+                    </h3>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                       For APIs that include a Swagger/OpenAPI specification, the platform offers direct access to a powerful interactive environment:
+                    </p>
+                    <p class="font-semibold">Key capabilities:</p>
+                    <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                        <li>
+                           Browse all endpoints: Complete list organized by resource or tag, showing HTTP methods (GET, POST, PUT, DELETE, etc.), paths, parameters (path, query, header, body), and required permissions.
+                        </li>
+                        <li>
+                          Execute requests in real time:
+                            <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                                <li>Fill in parameters and request bodies directly in the browser.</li>
+                                <li>Authenticate using your own credentials (API key, Bearer token, etc.).</li>
+                                <li>Send requests and view actual server responses instantly — perfect for testing and validation.</li>
+                            </ul>   
+                        </li>
+                         <li>
+                            Inspect data models: Expandable schemas for request and response objects (JSON/XML), including field descriptions, data types, constraints, and examples.
+                        </li>
+                         <li>
+                            View curated examples: Multiple pre-filled request/response examples for common scenarios.
+                         </li>
+                         <li>
+                            Download specification: Export the OpenAPI YAML/JSON file for use in tools like Postman, code generators, or SDK creation.
+                        </li>
+                    </ul>
+                    <p class="text-gray-700 mb-6 leading-relaxed">The interactive Swagger UI transforms static documentation into a live playground, dramatically reducing integration time and debugging effort.</p>
+                </section>
+                <br>
+                <section *ngSwitchCase="'suggesting-docs'">
+                    <h3 class="text-xl font-semibold mb-3">
+                        Suggesting New or Improved Documentation
+                    </h3>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                      The platform thrives on collaboration. If an API is missing documentation or existing content needs enhancement, you can contribute directly:
+                    </p>
+                    <p class="font-semibold">Steps to submit a suggestion:</p>
+                    <ul class="list-decimal pl-6 text-gray-700 space-y-2">
+                        <li>
+                           Click the “Add New Documentation” or “Suggest API” button in the header (visible on all pages).
+                        </li>
+                        <li>
+                         Fill out the comprehensive submission form:
+                            <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                                <li>API Name (required).</li>
+                                <li>Non-technical description explaining purpose and value.</li>
+                                <li>Team or owner responsible for the API.</li>
+                                <li>Relevant tags (select existing or create new ones).</li>
+                                <li>External links (e.g., Git repository, Confluence page, existing Swagger URL).</li>
+                                <li>Contact person for follow-up.</li>
+                            </ul>
+                        </li>
+                        <li>
+                         Attach supporting files:
+                            <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                                <li>OpenAPI/Swagger YAML or JSON files.</li>
+                                <li>PDF guides, architecture diagrams, screenshots, or sample code.</li>
+                                <li>Any other helpful resources.</li>
+                            </ul>
+                        </li>
+                        <li>
+                         Submit the form.
+                        </li>
+                    </ul>   
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                      All suggestions are routed to the documentation maintenance team for review, completion, and publication. This process ensures the platform remains comprehensive, up-to-date, and valuable to everyone.
+                    </p>
+                </section>
+                 <br>
+                <section *ngSwitchCase="'best-practices'">
+                    <h3 class="text-xl font-semibold mb-3">
+                        Best Practices for Optimal Use
+                    </h3>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                      To make the most of the platform and foster a healthy API ecosystem:
+                    </p>
+                    <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                        <li>
+                          <span class="font-semibold"> Tag consistently : </span> Use meaningful, agreed-upon tags across teams (e.g., by domain, technology stack, or maturity level) to improve discoverability.
+                        </li>
+                        <li>
+                          <span class="font-semibold"> Check for updates frequently :  </span> APIs evolve — revisit documentation regularly to stay aware of new endpoints, breaking changes, or deprecations.
+                        </li>
+                        <li>
+                          <span class="font-semibold"> Always test in Swagger first : </span> Validate behavior and authentication with real requests before writing production code.
+                        <li>
+                          <span class="font-semibold"> Provide constructive feedback : </span> Use built-in feedback buttons or forms to report inaccuracies, missing information, or unclear sections.
+                        </li>
+                        <li>
+                          <span class="font-semibold">Promote useful APIs internally : </span> Share links to valuable documentation in team channels, wikis, or meetings to encourage reuse and reduce duplication.
+                        </li>
+                        <li>
+                          <span class="font-semibold">Follow versioning guidelines : </span> Pay attention to version indicators and migration notes when upgrading integrations.
+                        </li>
+                    </ul>  
+                    <br> 
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                      By embracing these practices, you not only improve your own efficiency but also contribute to a stronger, more collaborative API culture across the organization. <br>
+                    </p>
+                </section>
+                <section *ngSwitchCase="'support'">
+                    <p>
+                        If you encounter issues, have questions, or need assistance, please don’t hesitate to reach out to the Platform Support Team via the “Help” or “Contact Support” link in the footer.
+                    </p>
+                </section>
+            </main>
+        </div>
+        <p class="text-amber-500 text-center text-lg font-bold py-7">Thank you for using the API Documentation Platform — happy exploring!</p>
+    </div>
+</div>

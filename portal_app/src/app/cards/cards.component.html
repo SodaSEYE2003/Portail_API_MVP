@@ -1,0 +1,185 @@
+<section class="py-16 px-6 bg-white">
+    <div class="max-w-7xl mx-auto text-center mb-12">
+        <h2 class="text-3xl font-bold">Available Documentation</h2>
+        <p class="text-gray-500 mt-2">Explore all APIs available within API Management</p>
+        <div class="w-24 h-1 bg-orange-500 mx-auto mt-4 rounded"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+        @for(Api of API; track  Api.id){
+            <div class="bg-white rounded-2xl shadow p-6 relative hover:shadow-xl transform transition-transform duration-300 hover:scale-105 animate-fadeInUp">
+            <div class="absolute top-6 right-6 text-xl">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#000000"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="w-5 h-5">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+                </svg>
+            </div >
+            <div class="flex mx-auto  ">
+                <h3 class="text-lg font-bold mb-2">{{Api.title}} </h3>
+                <span class="flex text-yellow-500">
+                    <svg *ngIf="Api.rating === 0 " xmlns="http://www.w3.org/2000/svg"
+                        class="w-6 h-6 text-yellow-100"
+                        fill="currentColor"
+                        viewBox="0 0 24 24">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                    </svg>
+                    <svg  *ngIf="Api.rating > 0 && Api.rating <= 3 " xmlns="http://www.w3.org/2000/svg"
+                        class="w-6 h-6 text-yellow-300"
+                        fill="currentColor"
+                        viewBox="0 0 24 24">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                    </svg>
+                    <svg  *ngIf="Api.rating > 3 && Api.rating <= 5 " xmlns="http://www.w3.org/2000/svg"
+                        class="w-6 h-6 text-yellow-500"
+                        fill="currentColor"
+                        viewBox="0 0 24 24">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                    </svg>
+                     {{Api.rating}}
+                </span>
+            </div>
+            <span *ngIf="Api.status === 'Active'" class="inline-block px-3 py-1 bg-green-400 text-sm rounded mb-2">
+                Active
+            </span>
+
+            <span *ngIf="Api.status === 'beta'" class="inline-block px-3 py-1 bg-yellow-200 text-sm rounded mb-2">
+                Beta
+            </span>
+
+            <span *ngIf="Api.status === 'obsolete'" class="inline-block px-3 py-1 bg-red-600 text-sm rounded mb-2">
+                Obsolete
+            </span>
+            <p class="text-gray-600 text-sm mb-4">
+                {{Api.description}}
+            </p>
+            <div class="flex gap-2 flex-wrap">
+                @for(tag of Api.tags; track tag){
+                    <span class="px-3 py-1 bg-gray-100 text-sm rounded">{{tag}}</span>
+                }
+            </div>
+        </div>
+        }
+        
+    </div>
+    <div class="mt-10 flex justify-center items-center">
+        <button class="max-w-7xl flex gap-10 bg-[#FF7900] text-black font-semibold px-4 py-2 rounded-xl hover:scale-105 hover:shadow-xl transition-all duration-300 animate-fadeInUp hover:bg-[#FF7900]">
+            See all documentation
+            <svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#000000"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+            </svg>
+        </button>
+    </div>
+</section>
+<section class="w-full bg-black py-12 px-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 text-white ">
+
+        <!-- Logo + Newsletter -->
+        <div class="mr-8">
+            <img src="assets/images/orange_logo.png" alt="Orange Logo" class="w-16">
+            <h2 class="text-xl font-bold mt-4">Stay Connected</h2>
+            <p class="text-gray-300 mt-2 mb-6">
+                Subscribe to our newsletter for the latest updates
+            </p>
+
+            <div class="flex">
+                <input
+                    type="email"
+                    placeholder="Enter your email"
+                    class="w-100 rounded-l-xl border border-orange-500 bg-black px-4 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-orange-500"
+                />
+                <button
+                    class="bg-orange-500 text-black font-semibold px-5 py-2 rounded-r-xl hover:bg-orange-600">
+                    Subscribe
+                </button>
+            </div>
+        </div>
+
+            <!-- Products -->
+        <div>
+            <h3 class="text-lg font-semibold mb-4">Products</h3>
+            <ul class="space-y-2 text-gray-300">
+                <li>Bank</li>
+                <li>Industries</li>
+                <li>Finance</li>
+                <li>Health</li>
+            </ul>
+        </div>
+
+            <!-- Clients -->
+        <div>
+            <h3 class="text-lg font-semibold mb-4">Clients</h3>
+            <ul class="space-y-2 text-gray-300">
+                <li>Bank</li>
+                <li>Industries</li>
+                <li>Finance</li>
+                <li>Health</li>
+            </ul>
+        </div>
+
+            <!-- Support + Socials -->
+        <div>
+            <ul class="space-y-2 text-gray-300 mb-6">
+                <li><a href="#" class="hover:text-orange-500">Support</a></li>
+                <li><a href="#" class="hover:text-orange-500">Resources</a></li>
+                <li><a href="#" class="hover:text-orange-500">Partners</a></li>
+                <li><a href="#" class="hover:text-orange-500">Contact</a></li>
+            </ul>
+
+                <!-- Ligne horizontale -->
+            <div class="w-full h-px bg-white mb-6"></div>
+
+                <!-- Réseaux sociaux -->
+            <div class="flex items-center gap-6 text-xl">
+                <a href="#" class="hover:text-orange-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6">
+                        <path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-2.9h2v-2.2c0-2 1.2-3.1 3-3.1.9 0 1.8.2 1.8.2v2h-1c-1 0-1.3.6-1.3 1.2v1.9h2.3l-.4 2.9h-1.9v7A10 10 0 0 0 22 12z"/>
+                    </svg>
+                </a>
+                <a href="#" class="hover:text-orange-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6">
+                        <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm8.25 2a.75.75 0 1 1 0 1.5.75.75 0 0 1 0-1.5zm-4.25 1.5a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7z"/>
+                    </svg>
+                </a>
+                <a href="#" class="hover:text-orange-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6">
+                        <path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.3 4.3 0 0 0 1.88-2.37 8.59 8.59 0 0 1-2.72 1.04 4.28 4.28 0 0 0-7.3 3.9A12.14 12.14 0 0 1 3 4.9a4.28 4.28 0 0 0 1.32 5.7 4.26 4.26 0 0 1-1.94-.54v.05a4.28 4.28 0 0 0 3.44 4.2 4.3 4.3 0 0 1-1.93.07 4.28 4.28 0 0 0 3.99 2.97A8.6 8.6 0 0 1 2 19.54a12.12 12.12 0 0 0 6.56 1.92c7.88 0 12.2-6.53 12.2-12.2l-.01-.56A8.72 8.72 0 0 0 24 4.56a8.48 8.48 0 0 1-2.54.7z"/>
+                    </svg>
+                </a>
+                <a href="#" class="hover:text-orange-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6">
+                        <path d="M19 0h-14a5 5 0 0 0-5 5v14a5 5 0 0 0 5 5h14a5 5 0 0 0 5-5v-14a5 5 0 0 0-5-5zm-11 19h-3v-9h3v9zm-1.5-10.3a1.75 1.75 0 1 1 0-3.5 1.75 1.75 0 0 1 0 3.5zm13.5 10.3h-3v-4.5c0-1.1-.9-2-2-2s-2 .9-2 2v4.5h-3v-9h3v1.3c.5-.8 1.5-1.3 2.5-1.3 2 0 3.5 1.5 3.5 3.5v5.5z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+  
+    <div class="mt-10 flex justify-center items-center">
+        <p class="text-sm text-white flex items-center gap-2">
+            <img
+            src="assets/images/copyrigth.png"
+            alt="Copyright"
+            class="w-5"
+            />
+            2025 Orange  - Tous droits réservés
+        </p>
+    </div>
+
+</section>
+
+

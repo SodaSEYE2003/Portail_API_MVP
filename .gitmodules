@@ -1,0 +1,3 @@
+[submodule "portal_app"]
+	path = portal_app
+	url = https://github.com/SodaSEYE2003/Portail_API_MVP.git

@@ -1,0 +1,16 @@
+.sidebar-link {
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.sidebar-link:hover {
+  background-color: #FFD6B0; /* amber-100 */
+}
+
+.sidebar-link.active {
+  background-color: #f97316; /* orange-100 */
+  border-left-color: #f97316; /* orange-500 */
+  font-weight: 600;
+  color: #9a3412; /* orange-900 */
+}
+
